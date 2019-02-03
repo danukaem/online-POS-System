@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>ONLINE POS SYSTEM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        #divright {
+            margin: 50px;
+
+            display: inline-block;
+            position: absolute;
+            left: 400px;
+            top: 130px;
+            padding: 0px;
+
+        }
+
+        #headingdiv {
+            background-color: blueviolet;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+
+        .list-group-item-action:hover {
+            background-color: rgb(148, 245, 245) !important;
+            text-align: center;
+
+        }
+
+        #heading {
+            text-align: center;
+            padding: 10px;
+            text-shadow:-1px 1px 3px #000000;
+            /* z-index: 1 !important; */
+            /* position: fixed; */
+            color: rgb(27, 226, 233) !important;
+
+
+        }
+
+        .card-img-top {
+            height: 200px;
+            padding: 5px;
+        }
+
+
+        .btn {
+            width: 250px;
+        }
+
+        .divleft {
+            top: 100px;
+            margin: 50px;
+            padding: 0px;
+        }
+
+        #spinner {
+            position: absolute;
+            bottom: 20px;
+            left: 80%;
+        }
+
+        .card {
+            border: dashed 5px #000000;
+            -moz-border-radius-topleft: 49px;
+            -moz-border-radius-topright: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            -moz-border-radius-bottomright: 52px;
+            -webkit-border-top-left-radius: 49px;
+            -webkit-border-top-right-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -webkit-border-bottom-right-radius: 52px;
+            border-top-left-radius: 49px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 52px;
+        }
+        #sidebar{
+            height: 100%; /* Full-height: remove this if you want "auto" height */
+            width: 280px; /* Set the width of the sidebar */
+            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+            top: 0; 
+            left: 0;
+            background-color: rgb(37, 36, 36); 
+            padding-top: 200px;
+
+        }
+        #sidemenu{
+            position: relative;
+            padding: 20px;
+            width: 300px !important;
+        }
+        #list-tab{
+            width: 250px !important;
+            padding: 10px;
+            position: relative;
+            top: -30px;
+
+
+        }
+        .list-group-item{
+            background-color: rgb(95, 86, 86) !important;
+            color: rgb(27, 226, 233) !important;
+        }
+        #sidebarimg{
+            position: absolute;
+            top: -150px;
+            left: 100px;
+            height: 100px;
+
+        }
+</style>
+</head>
+
+<body>
+    <div id="headingdiv">
+        <h1 id="heading">  <p style="font-size: 80px;"> Place Order System</p>  </h1>
+    </div>
+
+    <aside style="background-color:black ; width:150px;">
+
+    <div id="col-3" class="divleft">
+    
+        <div class="row" id="sidebar">
+                
+                
+            <div class="col-3" id="sidemenu">
+                    <!-- <img id="sidebarimg"  src="https://img.icons8.com/color/48/000000/food-truck.png"> -->
+                    <img id="sidebarimg"src="https://img.icons8.com/color/48/000000/shop.png">
+                  
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                        href="#list-home" role="tab" aria-controls="home">Home</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+                        role="tab" aria-controls="profile">Customer</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages"
+                        role="tab" aria-controls="messages">Item</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings"
+                        role="tab" aria-controls="settings">Place Order</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-settings" role="tab"
+                        aria-controls="settings">Orders</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+
+    <div id="divright">
+        <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img src="images/Customer2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Customer Registration</h5>
+                    <p class="card-text">Please Click hear to register customers. </p>
+                    <a href="customer.html" class="btn btn-primary">Go customer</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="images/items1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Item Registration</h5>
+                    <p class="card-text">Please Click hear to register and update items. </p>
+                    <a href="#" class="btn btn-primary">Go items</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="images/placeorder2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Place Orders</h5>
+                    <p class="card-text">Please Click hear to place your order .</p>
+                    <a href="#" class="btn btn-primary">Go placeOrder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="spinner">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/control.js"></script>
+</body>
+
+</html>

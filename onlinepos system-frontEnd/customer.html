@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- <link rel="stylesheet" href="css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+
+    #div1{
+        border: 50px !important;
+        margin: 50px  !important;
+    }
+    .form-check{
+        display: inline-block;
+    }
+    #marrieddiv,#genderdiv{
+        margin: 5px;
+        display: inline-block;
+        /* background-color: rgb(76, 173, 238); */
+        padding: 5px;
+    }
+    #headingdiv{
+        margin: 5px;
+        background-color: rgb(76, 173, 238);
+        padding: 50px;
+        text-align: center;
+
+    }
+    table,tr,th{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            margin: 10px;
+        }
+        #div4{
+            padding: 30px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div id="headingdiv">
+        <h1 id="heading">Customer Registration Form </h1>
+    </div>
+
+    <div id="div1">
+
+        <form>
+
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">First Name</label>
+                <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter first name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="last name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Birth Day</label>
+                <input type="text" class="form-control" id="birthday" placeholder="birthday">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="address">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contact Number</label>
+                <input type="text" class="form-control" id="contactno" placeholder="contact number">
+            </div>
+            <div id="marrieddiv">Married Status : <br>
+                <form action="">
+                    <div class="form-check">
+                        <input type="radio" name="exampleRadios1" id="married" value="Married" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Married
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="exampleRadios1" id="single" value="Single" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Single
+                        </label>
+                    </div>
+                </form>
+
+            </div>
+            <div id="genderdiv"> Gender :
+                <form action="">
+                    <div class="form-check">
+                        <input type="radio" name="exampleRadios2" id="male" value="Male" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="exampleRadios2" id="female" value="Female" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Female
+                        </label>
+                    </div>
+                </form>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">attact your photo</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input class="btn btn-primary saveCustomer" type="button" value="Save Customer">
+
+    </div>
+    <div id="div4">
+        <!-- <table id="customertbl2" class="table table-striped table-dark"> -->
+        <table id="myTable" class="display table table-striped table-dark">
+            <!-- style="width:100%" -->
+
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                    <th>Married Status</th>
+                    <th>Gender</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+            <!-- <tfoot>
+                <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>
+            </tfoot> -->
+        </table>
+    </div>
+    </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/jquery.dataTables.min.js"></script>
+
+    <script>
+
+        // $(document).ready(function () {
+        //     $('#myTable').DataTable();
+        // });
+        $(document).ready(function () {
+            $('#firstname').val("");
+            $('#lastname').val("");
+            $('#birthday').val("");
+            $('#address').val("");
+            $('#contactno').val("");
+            document.getElementById("married").checked = false;
+            document.getElementById("single").checked = false;
+            document.getElementById("male").checked = false;
+            document.getElementById("female").checked = false;
+            $('#firstname').focus();
+        });
+
+
+
+        $('.saveCustomer').click(function () {
+
+            var i = $('tbody').find('tr:last-child').find('td:first-child').text();
+            if (!i) {
+                code = 'C001';
+            }
+            else {
+                var code;
+                i = parseInt(i.slice(1));
+                if (i < 9) {
+                    code = 'C00' + (i + 1);
+                }
+                else if (i < 99) {
+                    code = 'C0' + (i + 1);
+                }
+                else {
+                    code = 'C' + (i + 1);
+                }
+            }
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var birthday = $('#birthday').val();
+            var address = $('#address').val();
+            var contactno = $('#contactno').val();
+            if(firstname.trim()==""){
+                $('#firstname').focus();
+                return;}
+            else if(lastname.trim()==""){
+                $('#lastname').focus();
+                return;}
+            else if(birthday.trim()==""){
+                $('#birthday').focus();
+                return;}
+            else if(address.trim()==""){
+                $('#address').focus();
+                return;}
+            else if(contactno.trim()==""){
+                $('#contactno').focus();
+                return;}
+            // var marriedstatus = document.getElementById("#married").value;
+            // var gender = document.getElementById("male").value;
+            var marriedstatus = $('input[name="exampleRadios1"]:checked').val();
+            var gender = $('input[name="exampleRadios2"]:checked').val();
+            // exampleRadios
+            // document.getElementsByName('genderS');
+
+
+            $('#firstname').val("");
+            $('#lastname').val("");
+            $('#birthday').val("");
+            $('#address').val("");
+            $('#contactno').val("");
+            document.getElementById("married").checked = false;
+            document.getElementById("single").checked = false;
+            document.getElementById("male").checked = false;
+            document.getElementById("female").checked = false;
+
+        
+
+
+            $('tbody').append(`<tr>
+                    <td>${code}</td>
+                    <td>${firstname} ${lastname} </td>
+                    <td>${address}</td>
+                    <td>${contactno}</td>
+                    <td>${marriedstatus}</td>
+                    <td>${gender}</td>
+                    <td><input style="background-color: tomato" type="button" name="delete"  value="delete"></td>
+
+                </tr>`);
+
+            $('td:last-child').click(function () {
+                $(this).parent().remove();
+            });
+
+            $('tbody tr').off('click');
+            $('tbody tr').click(function () {
+                var selectedrow = $(this);
+                var Fullname = selectedrow.find('td:nth-child(2)').text();
+                var addr = selectedrow.find('td:nth-child(3)').text();
+                var con = selectedrow.find('td:nth-child(4)').text();
+                var mar = selectedrow.find('td:nth-child(5)').text();
+                var gen = selectedrow.find('td:nth-child(6)').text();
+
+                var Fname = Fullname.split(" ")[0];
+                var Lname = Fullname.split(" ")[1];
+                console.log(Fname);
+
+                $('#firstname').val(Fname);
+                $('#lastname').val(Lname);
+                $('#birthday').val();
+                $('#address').val(addr);
+                $('#contactno').val(con);
+                if(mar=='Married'){
+                document.getElementById("married").checked = true;
+                }
+                if(mar=='Single'){
+                document.getElementById("single").checked = true;
+                }
+                if(gen=='Male'){
+                document.getElementById("male").checked = true;
+                }
+                if(gen=='Female'){
+                document.getElementById("female").checked = true;
+                }
+
+            });
+
+            // document.getElementById("red").checked = true;
+            // console.log(name);
+            // alert(firstname);
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
