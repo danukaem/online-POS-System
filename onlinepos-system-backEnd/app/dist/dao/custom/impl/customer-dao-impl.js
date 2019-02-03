@@ -47,7 +47,7 @@ var CustomerDAOImpl = /** @class */ (function () {
     CustomerDAOImpl.prototype.save = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO Customer VALUES ('" + entity.id + "','" + entity.name + "','" + entity.address + "')", function (err, results) {
+            _this.connection.query("INSERT INTO Customer VALUES ('" + entity.name + "','" + entity.id + "','" + entity.address + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }

@@ -67,7 +67,7 @@ export class CustomerDAOImpl implements CustomerDAO {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`INSERT INTO Customer VALUES ('${entity.id}','${entity.name}','${entity.address}')`,
+            this.connection.query(`INSERT INTO Customer VALUES ('${entity.name}','${entity.id}','${entity.address}')`,
                 (err, results) => {
 
                     if (err) {
