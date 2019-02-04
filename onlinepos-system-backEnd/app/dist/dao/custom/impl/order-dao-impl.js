@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Promise = require("promise");
-var ItemDAOImpl = /** @class */ (function () {
-    function ItemDAOImpl(connection) {
+var OrderDAOImpl = /** @class */ (function () {
+    function OrderDAOImpl(connection) {
         this.connection = connection;
     }
-    ItemDAOImpl.prototype.delete = function (code) {
+    OrderDAOImpl.prototype.delete = function (orderid) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("DELETE FROM Item WHERE code='" + code + "'", function (err, results) {
+            _this.connection.query("DELETE FROM order WHERE orderid='" + orderid + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -18,10 +18,10 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    ItemDAOImpl.prototype.find = function (code) {
+    OrderDAOImpl.prototype.find = function (orderid) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT * FROM Item WHERE code='" + code + "'", function (err, results) {
+            _this.connection.query("SELECT * FROM order WHERE orderid='" + orderid + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -31,10 +31,10 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    ItemDAOImpl.prototype.findAll = function () {
+    OrderDAOImpl.prototype.findAll = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT * FROM Item", function (err, results) {
+            _this.connection.query("SELECT * FROM  order", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -44,10 +44,10 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    ItemDAOImpl.prototype.save = function (entity) {
+    OrderDAOImpl.prototype.save = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO item VALUES ('" + entity.code + "','" + entity.description + "','" + entity.qtyOnHand + "','" + entity.unitprice + "')", function (err, results) {
+            _this.connection.query("INSERT INTO order VALUES ('" + entity.cusid + "','" + entity.cusname + "','" + entity.code + "'\n              ,'" + entity.description + "','" + entity.qtyonstore + "','" + entity.unitprice + "','" + entity.orderqty + "','" + entity.orderid + "','" + entity.orderdate + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -57,11 +57,10 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    ItemDAOImpl.prototype.update = function (entity) {
+    OrderDAOImpl.prototype.update = function (entity) {
         var _this = this;
-        console.log("itemDAO IMPL");
         return new Promise(function (resolve, reject) {
-            _this.connection.query("UPDATE item SET description = '" + entity.description + "', unitprice ='" + entity.unitprice + "',qtyOnHand='" + entity.qtyOnHand + "' WHERE code='" + entity.code + "'", function (err, results) {
+            _this.connection.query("UPDATE order SET cusid = '" + entity.cusid + "', cusname ='" + entity.cusname + "', code ='" + entity.code + "', description ='" + entity.description + "'\n           , qtyonstore ='" + entity.qtyonstore + "', unitprice ='" + entity.unitprice + "', orderqty ='" + entity.orderqty + "', orderdate ='" + entity.orderdate + "'\n             WHERE orderid='" + entity.orderid + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -71,10 +70,10 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    ItemDAOImpl.prototype.count = function () {
+    OrderDAOImpl.prototype.count = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT COUNT (*) FROM item", function (err, results) {
+            _this.connection.query("SELECT COUNT (*) FROM order", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -84,6 +83,6 @@ var ItemDAOImpl = /** @class */ (function () {
             });
         });
     };
-    return ItemDAOImpl;
+    return OrderDAOImpl;
 }());
-exports.ItemDAOImpl = ItemDAOImpl;
+exports.OrderDAOImpl = OrderDAOImpl;

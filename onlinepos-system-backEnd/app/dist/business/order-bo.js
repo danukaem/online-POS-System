@@ -1,22 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var Promise = require("promise");
 var db_pool_1 = require("../db/db-pool");
 var dao_factory_1 = require("../dao/dao-factory");
-var Promise = require("promise");
-var ItemBo = /** @class */ (function () {
-    function ItemBo() {
+var OrderBO = /** @class */ (function () {
+    function OrderBO() {
     }
-    ItemBo.prototype.findAllItems = function () {
+    OrderBO.prototype.findAllOrders = function () {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.findAll();
-                    promise.then(function (items) {
-                        resolve(items);
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.findAll();
+                    promise.then(function (orders) {
+                        resolve(orders);
                         db_pool_1.pool.releaseConnection(connection);
                     }).catch(function (error) {
                         reject(error);
@@ -26,17 +26,17 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    ItemBo.prototype.findItem = function (code) {
+    OrderBO.prototype.findOrder = function (orderid) {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.find(code);
-                    promise.then(function (item) {
-                        resolve(item);
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.find(orderid);
+                    promise.then(function (order) {
+                        resolve(order);
                         db_pool_1.pool.releaseConnection(connection);
                     }).catch(function (error) {
                         reject(error);
@@ -46,15 +46,15 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    ItemBo.prototype.saveItem = function (item) {
+    OrderBO.prototype.saveOrder = function (order) {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.save(item);
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.save(order);
                     promise.then(function (result) {
                         resolve(result);
                         db_pool_1.pool.releaseConnection(connection);
@@ -66,16 +66,15 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    ItemBo.prototype.updateItem = function (item) {
-        console.log("itemBo");
+    OrderBO.prototype.updateOrder = function (order) {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.update(item);
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.update(order);
                     promise.then(function (result) {
                         resolve(result);
                         db_pool_1.pool.releaseConnection(connection);
@@ -87,15 +86,15 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    ItemBo.prototype.deleteItem = function (code) {
+    OrderBO.prototype.deleteOrder = function (orderid) {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.delete(code);
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.delete(orderid);
                     promise.then(function (result) {
                         resolve(result);
                         db_pool_1.pool.releaseConnection(connection);
@@ -107,15 +106,15 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    ItemBo.prototype.countItems = function () {
+    OrderBO.prototype.countOrders = function () {
         return new Promise(function (resolve, reject) {
             db_pool_1.pool.getConnection(function (err, connection) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var itemDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ITEM, connection);
-                    var promise = itemDAO.count();
+                    var orderDAO = dao_factory_1.getDAO(dao_factory_1.DAOTypes.ORDER, connection);
+                    var promise = orderDAO.count();
                     promise.then(function (count) {
                         resolve(count);
                     }).catch(function (err) {
@@ -125,6 +124,6 @@ var ItemBo = /** @class */ (function () {
             });
         });
     };
-    return ItemBo;
+    return OrderBO;
 }());
-exports.ItemBo = ItemBo;
+exports.OrderBO = OrderBO;

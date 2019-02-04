@@ -15,7 +15,7 @@ itemDispatcher.route("")
     });
 })
     .post(function (req, res) {
-    if (!("code" in req.body && "description" in req.body && "unitPrice" in req.body && "qtyOnHand" in req.body)) {
+    if (!("code" in req.body && "description" in req.body && "unitprice" in req.body && "qtyOnHand" in req.body)) {
         res.status(400).send("Invalid Request Body");
         return;
     }
@@ -62,7 +62,8 @@ itemDispatcher.route("/:code")
     });
 })
     .put(function (req, res) {
-    if (!("code" in req.body && "description" in req.body && "unitPrice" in req.body && "qtyOnHand" in req.body)) {
+    console.log("itemdispatcher");
+    if (!("code" in req.body && "description" in req.body && "unitprice" in req.body && "qtyOnHand" in req.body)) {
         res.status(400).send("Invalid Request Body");
         return;
     }
@@ -71,6 +72,7 @@ itemDispatcher.route("/:code")
         return;
     }
     var promise = new item_bo_1.ItemBo().updateItem(req.body);
+    console.log("itemDispatcher");
     promise.then(function (status) {
         if (status) {
             res.status(200).send(true);

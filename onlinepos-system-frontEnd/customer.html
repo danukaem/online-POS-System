@@ -169,7 +169,6 @@
 </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script src="js/jquery.dataTables.min.js"></script>
 
 <script>
@@ -240,6 +239,7 @@
                 alert("Unsuccess");
 
             });
+            // startup();
 
 
             $('tbody').append(`<tr>
@@ -300,8 +300,8 @@
             var code = findLastID();
             updateCustomer(selectedID);
             $('tbody tr').remove();
-            // startup();
-            // reset();
+            startup();
+
         }
     });
 
@@ -426,7 +426,7 @@
                     // $(this).parent().parent().find()
                     var tem = $(this).parent().children();
                     tem = $(tem[0]).text();
-                    console.log(tem+"  tem");
+                    console.log(tem + "  tem");
                     var ajaxconfig2 = {
                         method: 'DELETE',
                         url: Url + "/api/v1/customers/" + tem,
@@ -444,6 +444,7 @@
         }).fail(function () {
             alert("save Unsuccess");
         });
+
     }
 </script>
 </body>

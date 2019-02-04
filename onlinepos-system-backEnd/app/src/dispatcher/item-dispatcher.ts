@@ -20,7 +20,7 @@ itemDispatcher.route("")
     })
     .post((req, res) => {
 
-        if (!("code" in req.body && "description" in req.body && "unitPrice" in req.body && "qtyOnHand" in req.body)){
+        if (!("code" in req.body && "description" in req.body && "unitprice" in req.body && "qtyOnHand" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
@@ -77,7 +77,8 @@ itemDispatcher.route("/:code")
     })
     .put((req, res) => {
 
-        if (!("code" in req.body && "description" in req.body && "unitPrice" in req.body && "qtyOnHand" in req.body)){
+        console.log("itemdispatcher");
+        if (!("code" in req.body && "description" in req.body && "unitprice" in req.body && "qtyOnHand" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
@@ -88,6 +89,7 @@ itemDispatcher.route("/:code")
         }
 
         const promise = new ItemBo().updateItem(req.body);
+        console.log("itemDispatcher");
         promise.then(status=>{
 
             if (status){
@@ -97,6 +99,7 @@ itemDispatcher.route("/:code")
             }
 
         }).catch(error=>{
+
             res.status(500).send(error);
         });
 

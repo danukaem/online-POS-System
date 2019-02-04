@@ -1,19 +1,18 @@
 import Promise = require("promise");
 import {PoolConnection} from "mysql";
-import {ItemDAO} from "../item-dao";
-import {Item} from "../../../entity/item";
+import {OrderDAO} from "../order-dao";
+import {Order} from "../../../entity/order";
 
-
-export class ItemDAOImpl implements ItemDAO {
+export class OrderDAOImpl implements OrderDAO {
 
     constructor(private connection: PoolConnection) {
     }
 
-    delete(code: string): Promise<boolean> {
+    delete(orderid: string): Promise<boolean> {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`DELETE FROM Item WHERE code='${code}'`,
+            this.connection.query(`DELETE FROM order WHERE orderid='${orderid}'`,
                 (err, results) => {
 
                     if (err) {
@@ -27,11 +26,11 @@ export class ItemDAOImpl implements ItemDAO {
 
     }
 
-    find(code: string): Promise<Array<Item>> {
+    find(orderid: string): Promise<Array<Order>> {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`SELECT * FROM Item WHERE code='${code}'`,
+            this.connection.query(`SELECT * FROM order WHERE orderid='${orderid}'`,
                 (err, results) => {
 
                     if (err) {
@@ -45,11 +44,11 @@ export class ItemDAOImpl implements ItemDAO {
 
     }
 
-    findAll(): Promise<Array<Item>> {
+    findAll(): Promise<Array<Order>> {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`SELECT * FROM Item`,
+            this.connection.query(`SELECT * FROM  order`,
                 (err, results) => {
 
                     if (err) {
@@ -63,27 +62,13 @@ export class ItemDAOImpl implements ItemDAO {
 
     }
 
-    save(entity: Item): Promise<boolean> {
-        return new Promise((resolve, reject) => {
-            this.connection.query(`INSERT INTO item VALUES ('${entity.code}','${entity.description}','${entity.qtyOnHand}','${entity.unitprice}')`,
-                (err, results) => {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        resolve(results.affectedRows > 0);
-                    }
-                });
-        });
-    }
-
-    update(entity: Item): Promise<boolean> {
-        console.log("itemDAO IMPL");
+    save(entity: Order): Promise<boolean> {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`UPDATE item SET description = '${entity.description}', unitprice ='${entity.unitprice}',qtyOnHand='${entity.qtyOnHand}' WHERE code='${entity.code}'`,
+            this.connection.query(`INSERT INTO order VALUES ('${entity.cusid}','${entity.cusname}','${entity.code}'
+              ,'${entity.description}','${entity.qtyonstore}','${entity.unitprice}','${entity.orderqty}','${entity.orderid}','${entity.orderdate}')`,
                 (err, results) => {
-
                     if (err) {
                         reject(err);
                     } else {
@@ -92,10 +77,29 @@ export class ItemDAOImpl implements ItemDAO {
 
                 });
         });
+
     }
+
+    update(entity: Order): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            this.connection.query(`UPDATE order SET cusid = '${entity.cusid}', cusname ='${entity.cusname}', code ='${entity.code}', description ='${entity.description}'
+           , qtyonstore ='${entity.qtyonstore}', unitprice ='${entity.unitprice}', orderqty ='${entity.orderqty}', orderdate ='${entity.orderdate}'
+             WHERE orderid='${entity.orderid}'`,
+                (err, results) => {
+
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(results.affectedRows > 0);
+                    }
+
+                });
+        });
+    }
+
     count(): Promise<number> {
         return new Promise((resolve, reject) => {
-            this.connection.query("SELECT COUNT (*) FROM item", (err, results) => {
+            this.connection.query("SELECT COUNT (*) FROM order", (err, results) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -103,7 +107,6 @@ export class ItemDAOImpl implements ItemDAO {
                 }
             });
         });
-
     }
-}
 
+}

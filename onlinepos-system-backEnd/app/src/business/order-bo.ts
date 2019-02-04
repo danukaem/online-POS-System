@@ -1,44 +1,32 @@
-import {pool} from "../db/db-pool";
-import {DAOTypes, getDAO} from "../dao/dao-factory";
 import Promise = require("promise");
-import {ItemDTO} from "../dto/item-dto";
-import {ItemDAO} from "../dao/custom/item-dao";
+import {CustomerDTO} from "../dto/customer-dto";
+import {pool} from "../db/db-pool";
 import {CustomerDAO} from "../dao/custom/customer-dao";
-import {Item} from "../entity/item";
+import {DAOTypes, getDAO} from "../dao/dao-factory";
+import {OrderDTO} from "../dto/order-dto";
+import {OrderDAO} from "../dao/custom/order-dao";
 
-export class ItemBo{
-
-    findAllItems(): Promise<Array<ItemDTO>>{
-
+export class OrderBO{
+    findAllOrders(): Promise<Array<OrderDTO>>{
         return new Promise((resolve, reject) => {
-
             pool.getConnection((err, connection) => {
-
                 if (err){
                     reject(err);
                 }else{
-
-                    const itemDAO = <ItemDAO> getDAO(DAOTypes.ITEM, connection);
-
-                    const promise = itemDAO.findAll();
-                    promise.then(items => {
-                        resolve(items);
+                    const orderDAO = <OrderDAO> getDAO(DAOTypes.ORDER, connection);
+                    const promise = orderDAO.findAll();
+                    promise.then(orders => {
+                        resolve(orders);
                         pool.releaseConnection(connection);
                     }).catch(error=>{
                         reject(error);
                         pool.releaseConnection(connection);
                     });
-
                 }
-
             });
-
-
         });
-
     }
-
-    findItem(code: string): Promise<Array<ItemDTO>>{
+    findOrder(orderid: string): Promise<Array<OrderDTO>>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -47,11 +35,11 @@ export class ItemBo{
                     reject(err);
                 }else{
 
-                    const itemDAO = <ItemDAO> getDAO(DAOTypes.ITEM, connection);
+                    const orderDAO = <OrderDAO> getDAO(DAOTypes.ORDER, connection);
 
-                    const promise = itemDAO.find(code);
-                    promise.then(item => {
-                        resolve(item);
+                    const promise = orderDAO.find(orderid);
+                    promise.then(order => {
+                        resolve(order);
                         pool.releaseConnection(connection);
                     }).catch(error=>{
                         reject(error);
@@ -66,7 +54,7 @@ export class ItemBo{
         });
     }
 
-    saveItem(item: ItemDTO): Promise<boolean>{
+    saveOrder(order: OrderDTO): Promise<boolean>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -75,9 +63,9 @@ export class ItemBo{
                     reject(err);
                 }else{
 
-                    const itemDAO = <ItemDAO> getDAO(DAOTypes.ITEM, connection);
+                    const orderDAO = <OrderDAO> getDAO(DAOTypes.ORDER, connection);
 
-                    const promise = itemDAO.save(item);
+                    const promise = orderDAO.save(order);
                     promise.then(result => {
                         resolve(result);
                         pool.releaseConnection(connection);
@@ -94,29 +82,7 @@ export class ItemBo{
         });
     }
 
-    updateItem(item: ItemDTO): Promise<boolean>{
-        console.log("itemBo");
-
-        return new Promise((resolve, reject) => {
-            pool.getConnection((err, connection) => {
-                if (err){
-                    reject(err);
-                }else{
-                    const itemDAO = <ItemDAO> getDAO(DAOTypes.ITEM, connection);
-                    const promise = itemDAO.update(item);
-                    promise.then(result => {
-                        resolve(result);
-                        pool.releaseConnection(connection);
-                    }).catch(error=>{
-                        reject(error);
-                        pool.releaseConnection(connection);
-                    });
-                }
-            });
-        });
-    }
-
-    deleteItem(code: string): Promise<boolean>{
+    updateOrder(order: OrderDTO): Promise<boolean>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -125,9 +91,9 @@ export class ItemBo{
                     reject(err);
                 }else{
 
-                    const itemDAO = <ItemDAO> getDAO(DAOTypes.ITEM, connection);
+                    const orderDAO = <OrderDAO> getDAO(DAOTypes.ORDER, connection);
 
-                    const promise = itemDAO.delete(code);
+                    const promise = orderDAO.update(order);
                     promise.then(result => {
                         resolve(result);
                         pool.releaseConnection(connection);
@@ -144,15 +110,41 @@ export class ItemBo{
         });
     }
 
+    deleteOrder(orderid: string): Promise<boolean>{
+        return new Promise((resolve, reject) => {
 
-    countItems():Promise<number>{
+            pool.getConnection((err, connection) => {
+
+                if (err){
+                    reject(err);
+                }else{
+
+                    const orderDAO = <OrderDAO> getDAO(DAOTypes.ORDER, connection);
+
+                    const promise = orderDAO.delete(orderid);
+                    promise.then(result => {
+                        resolve(result);
+                        pool.releaseConnection(connection);
+                    }).catch(error=>{
+                        reject(error);
+                        pool.releaseConnection(connection);
+                    });
+
+                }
+
+            });
+
+
+        });
+    }
+    countOrders():Promise<number>{
         return new Promise((resolve, reject) => {
             pool.getConnection((err, connection) => {
                 if(err){reject(err);}
                 else{
-                    const itemDAO =<ItemDAO>getDAO(DAOTypes.ITEM, connection);
-                    const promise =itemDAO.count();
-                    promise.then(count =>{
+                    const orderDAO =<OrderDAO>getDAO(DAOTypes.ORDER, connection);
+                    const promise =orderDAO.count();
+                    promise.then(count=>{
                         resolve(count);
                     }).catch(err=>{
                         reject(err);
@@ -162,5 +154,6 @@ export class ItemBo{
             });
         });
     }
+
 
 }
