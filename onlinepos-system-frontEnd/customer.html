@@ -70,69 +70,69 @@
 
 
         <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
+            <label for="firstname">First Name</label>
             <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp"
                    placeholder="Enter first name">
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Last Name</label>
+            <label for="lastname">Last Name</label>
             <input type="text" class="form-control" id="lastname" placeholder="last name">
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Birth Day</label>
-            <input type="text" class="form-control" id="birthday" placeholder="birthday">
-        </div>
+        <!--<div class="form-group">-->
+        <!--<label for="exampleInputPassword1">Birth Day</label>-->
+        <!--<input type="text" class="form-control" id="birthday" placeholder="birthday">-->
+        <!--</div>-->
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Address</label>
+            <label for="address">Address</label>
             <input type="text" class="form-control" id="address" placeholder="address">
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Contact Number</label>
-            <input type="text" class="form-control" id="contactno" placeholder="contact number">
-        </div>
-        <div id="marrieddiv">Married Status : <br>
-            <form action="">
-                <div class="form-check">
-                    <input type="radio" name="exampleRadios1" id="married" value="Married" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Married
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="exampleRadios1" id="single" value="Single" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Single
-                    </label>
-                </div>
-            </form>
+        <!--<div class="form-group">-->
+        <!--<label for="exampleInputPassword1">Contact Number</label>-->
+        <!--<input type="text" class="form-control" id="contactno" placeholder="contact number">-->
+        <!--</div>-->
+        <!--<div id="marrieddiv">Married Status : <br>-->
+        <!--<form action="">-->
+        <!--<div class="form-check">-->
+        <!--<input type="radio" name="exampleRadios1" id="married" value="Married" checked>-->
+        <!--<label class="form-check-label" for="exampleRadios1">-->
+        <!--Married-->
+        <!--</label>-->
+        <!--</div>-->
+        <!--<div class="form-check">-->
+        <!--<input type="radio" name="exampleRadios1" id="single" value="Single" checked>-->
+        <!--<label class="form-check-label" for="exampleRadios1">-->
+        <!--Single-->
+        <!--</label>-->
+        <!--</div>-->
+    </form>
 
-        </div>
-        <div id="genderdiv"> Gender :
-            <form action="">
-                <div class="form-check">
-                    <input type="radio" name="exampleRadios2" id="male" value="Male" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="exampleRadios2" id="female" value="Female" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Female
-                    </label>
-                </div>
-            </form>
+    <!--</div>-->
+    <!--<div id="genderdiv"> Gender :-->
+    <!--<form action="">-->
+    <!--<div class="form-check">-->
+    <!--<input type="radio" name="exampleRadios2" id="male" value="Male" checked>-->
+    <!--<label class="form-check-label" for="exampleRadios1">-->
+    <!--Male-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--<div class="form-check">-->
+    <!--<input type="radio" name="exampleRadios2" id="female" value="Female" checked>-->
+    <!--<label class="form-check-label" for="exampleRadios">-->
+    <!--Female-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</form>-->
 
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlFile1">attact your photo</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input class="btn btn-primary saveCustomer" type="button" value="Save Customer">
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label for="exampleFormControlFile1">attact your photo</label>-->
+    <!--<input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+    <!--</div>-->
+    <input class="btn btn-primary saveCustomer" type="button" value="Save Customer">
 
 </div>
 <div id="div4">
@@ -145,9 +145,9 @@
             <th>Customer ID</th>
             <th>Customer Name</th>
             <th>Address</th>
-            <th>Contact No</th>
-            <th>Married Status</th>
-            <th>Gender</th>
+            <!--<th>Contact No</th>-->
+            <!--<th>Married Status</th>-->
+            <!--<th>Gender</th>-->
 
         </tr>
         </thead>
@@ -174,68 +174,215 @@
 
 <script>
 
-
     var code;
+    var Url = "http://localhost:3000";
 
     // $(document).ready(function () {
     //     $('#myTable').DataTable();
     // });
-    $(document).ready(function () {
-        $('#firstname').val("");
-        $('#lastname').val("");
-        $('#birthday').val("");
-        $('#address').val("");
-        $('#contactno').val("");
-        document.getElementById("married").checked = false;
-        document.getElementById("single").checked = false;
-        document.getElementById("male").checked = false;
-        document.getElementById("female").checked = false;
-        $('#firstname').focus();
+    $(document).ready(startup());
+    var selectedID;
+    // $('input[value="delete"]').click(function () {
+    //
+    //     $(this).parent().parent().remove();
+    // });
+    $('.saveCustomer').click(function () {
+        var btnText = $('.saveCustomer').val();
+        if (btnText === "Save Customer") {
+            var code = findLastID();
+
+            // var i = $('tbody').find('tr:last-child').find('td:first-child').text();
+            // if (!i) {
+            //     code = 'C001';
+            // } else {
+            //     i = parseInt(i.slice(1));
+            //     if (i < 9) {
+            //         code = 'C00' + (i + 1);
+            //     } else if (i < 99) {
+            //         code = 'C0' + (i + 1);
+            //     } else {
+            //         code = 'C' + (i + 1);
+            //     }
+            // }
+
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var address = $('#address').val();
+            validate(firstname, lastname, address);
+            // else if (contactno.trim() == "") {
+            //     $('#contactno').focus();
+            //     return;
+            // }
+            // var marriedstatus = $('input[name="exampleRadios1"]:checked').val();
+            // var gender = $('input[name="exampleRadios2"]:checked').val();
+            reset();
+            // $('#contactno').val("");
+            // document.getElementById("married").checked = false;
+            // document.getElementById("single").checked = false;
+            // document.getElementById("male").checked = false;
+            // document.getElementById("female").checked = false;
+            var customer = {
+                id: code,
+                name: firstname + " " + lastname,
+                address: address
+            };
+            var ajaxConfig = {
+                method: "post",
+                url: Url + "/api/v1/customers",
+                async: true,
+                contentType: "application/json",
+                data: JSON.stringify(customer)
+
+            };
+            $.ajax(ajaxConfig).done(function (response, statustext, jxhr) {
+                alert("Success");
+            }).fail(function () {
+                alert("Unsuccess");
+
+            });
 
 
-        var url = "http://localhost:3000";
-        var ajaxConfig = {
-            method: "GET",
-            url: url + "/api/v1/customers",
-            async: true,
-        };
-        $.ajax(ajaxConfig).done(function (customers, statustext, jxhr) {
-
-            customers.forEach(function (customer) {
-                code = customer.id;
-                $('tbody').append(`<tr>
-                    <td>${customer.id}</td>
-                    <td>${customer.name} </td>
-                    <td>${customer.address}</td>
+            $('tbody').append(`<tr>
+                    <td>${code}</td>
+                    <td>${firstname} ${lastname} </td>
+                    <td>${address}</td>
                     <td><input style="background-color: tomato" type="button" name="delete"  value="delete"></td>
 
                 </tr>`);
+            $('td:last-child').off('click');
 
+            $('td:last-child').click(function () {
+                // var temid = $(this).parent().parent().find('td:first-child').val();
+                var tem = $(this).parent().parent().children();
+                tem = $(tem[0]).text();
+                var ajaxconfig2 = {
+                    method: 'DELETE',
+                    url: Url + "/api/v1/customers/" + tem,
+                    async: true
+                };
+                $.ajax(ajaxconfig2).done(function (response, statusText, jxhr) {
+                    alert("delete Successful");
+                }).fail(function (jxhr, statusText, error) {
+                    alert("delete Unsuccessful");
+                });
+                $(this).parent().remove();
+            });
 
+            $('tbody tr').off('click');
+            $('tbody tr').click(function () {
+                selectedID = $($(this).children()[0]).text();
 
+                $('.saveCustomer').val("Update Customer");
 
-            })
+                filldata(this);
 
+                // $('#contactno').val(con);
+                // if (mar == 'Married') {
+                //     document.getElementById("married").checked = true;
+                // }
+                // if (mar == 'Single') {
+                //     document.getElementById("single").checked = true;
+                // }
+                // if (gen == 'Male') {
+                //     document.getElementById("male").checked = true;
+                // }
+                // if (gen == 'Female') {
+                //     document.getElementById("female").checked = true;
+                // }
 
-        }).fail(function () {
-            alert("Unsuccess");
+            });
 
-        });
-
-
-
+        } else {
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var address = $('#address').val();
+            validate(firstname, lastname, address);
+            var code = findLastID();
+            updateCustomer(selectedID);
+            $('tbody tr').remove();
+            // startup();
+            // reset();
+        }
     });
 
-    $('.saveCustomer').click(function () {
 
+    function filldata(element) {
+        var selectedrow = $(element);
+        var Fullname = selectedrow.find('td:nth-child(2)').text();
+        var addr = selectedrow.find('td:nth-child(3)').text();
+        // var con = selectedrow.find('td:nth-child(4)').text();
+        // var mar = selectedrow.find('td:nth-child(5)').text();
+        // var gen = selectedrow.find('td:nth-child(6)').text();
 
+        var Fname = Fullname.split(" ")[0];
+        var Lname = Fullname.split(" ")[1];
 
+        $('#firstname').val(Fname);
+        $('#lastname').val(Lname);
+        // $('#birthday').val();
+        $('#address').val(addr);
+    }
 
+    function updateCustomer(id) {
+        var firstname = $('#firstname').val();
+        var lastname = $('#lastname').val();
+        var addr = $('#address').val();
+        var cid = id;
+        var customer = {
+            id: cid,
+            name: firstname + " " + lastname,
+            address: addr
+        };
+        var ajaxconfig3 = {
+            method: 'PUT',
+            url: Url + "/api/v1/customers/" + id,
+            async: true,
+            contentType: "application/Json",
+            data: JSON.stringify(customer)
+        };
+        $.ajax(ajaxconfig3).done(function (response, statusText, jxhr) {
+            alert("update Successful");
+            startup();
+            reset();
+        }).fail(function (jxhr, statusText, error) {
+            alert("update Unsuccessful");
+        });
+        $('.saveCustomer').val("Save Customer");
+    }
+
+    function reset() {
+
+        $('#firstname').val("");
+        $('#lastname').val("");
+        $('#address').val("");
+    }
+
+    function validate(firstname, lastname, address) {
+
+        // var contactno = $('#contactno').val();
+        if (firstname.trim() == "") {
+            $('#firstname').focus();
+            return;
+        } else if (lastname.trim() == "") {
+            $('#lastname').focus();
+            return;
+        }
+        // else if (birthday.trim() == "") {
+        //     $('#birthday').focus();
+        //     return;
+        // }
+        else if (address.trim() == "") {
+            $('#address').focus();
+            return;
+        }
+    }
+
+    function findLastID() {
         var i = $('tbody').find('tr:last-child').find('td:first-child').text();
+        var code;
         if (!i) {
             code = 'C001';
         } else {
-
             i = parseInt(i.slice(1));
             if (i < 9) {
                 code = 'C00' + (i + 1);
@@ -245,122 +392,59 @@
                 code = 'C' + (i + 1);
             }
         }
-        var firstname = $('#firstname').val();
-        var lastname = $('#lastname').val();
-        var birthday = $('#birthday').val();
-        var address = $('#address').val();
-        var contactno = $('#contactno').val();
-        if (firstname.trim() == "") {
-            $('#firstname').focus();
-            return;
-        } else if (lastname.trim() == "") {
-            $('#lastname').focus();
-            return;
-        } else if (birthday.trim() == "") {
-            $('#birthday').focus();
-            return;
-        } else if (address.trim() == "") {
-            $('#address').focus();
-            return;
-        } else if (contactno.trim() == "") {
-            $('#contactno').focus();
-            return;
-        }
-        // var marriedstatus = document.getElementById("#married").value;
-        // var gender = document.getElementById("male").value;
-        var marriedstatus = $('input[name="exampleRadios1"]:checked').val();
-        var gender = $('input[name="exampleRadios2"]:checked').val();
-        // exampleRadios
-        // document.getElementsByName('genderS');
 
 
-        $('#firstname').val("");
-        $('#lastname').val("");
-        $('#birthday').val("");
-        $('#address').val("");
-        $('#contactno').val("");
-        document.getElementById("married").checked = false;
-        document.getElementById("single").checked = false;
-        document.getElementById("male").checked = false;
-        document.getElementById("female").checked = false;
+        return code;
+    }
 
-
-        var customer = {
-            id: code,
-            name: firstname + " " + lastname,
-            address: address
-
-        };
-
-        var url = "http://localhost:3000";
+    function startup() {
+        reset();
+        $('#firstname').focus();
         var ajaxConfig = {
-            method: "post",
-            url: url + "/api/v1/customers",
+            method: "GET",
+            url: Url + "/api/v1/customers",
             async: true,
-            contentType: "application/json",
-            data: JSON.stringify(customer)
-
         };
-        $.ajax(ajaxConfig).done(function (response, statustext, jxhr) {
-            alert("Success");
-        }).fail(function () {
-            alert("Unsuccess");
-
-        });
-
-
-        $('tbody').append(`<tr>
-                    <td>${code}</td>
-                    <td>${firstname} ${lastname} </td>
-                    <td>${address}</td>
-                    <td>${contactno}</td>
-                    <td>${marriedstatus}</td>
-                    <td>${gender}</td>
+        $.ajax(ajaxConfig).done(function (customers, statustext, jxhr) {
+            customers.forEach(function (customer) {
+                code = customer.id;
+                $('tbody').append(`<tr>
+                    <td>${customer.id}</td>
+                    <td>${customer.name} </td>
+                    <td>${customer.address}</td>
                     <td><input style="background-color: tomato" type="button" name="delete"  value="delete"></td>
-
                 </tr>`);
+                $('tbody tr').off('click');
+                $('tbody tr').click(function () {
+                    $('.saveCustomer').val("Update Customer");
+                    selectedID = $($(this).children()[0]).text();
+                    filldata(this);
+                });
+                $('td:last-child').off('click');
+                $('td:last-child').click(function () {
 
-        $('td:last-child').click(function () {
-            $(this).parent().remove();
+                    // $(this).parent().parent().find()
+                    var tem = $(this).parent().children();
+                    tem = $(tem[0]).text();
+                    console.log(tem+"  tem");
+                    var ajaxconfig2 = {
+                        method: 'DELETE',
+                        url: Url + "/api/v1/customers/" + tem,
+                        async: true
+                    };
+                    $.ajax(ajaxconfig2).done(function (response, statusText, jxhr) {
+                        alert("delete Successful");
+                    }).fail(function (jxhr, statusText, error) {
+                        alert("delete Unsuccessful");
+                    });
+                    $(this).parent().remove();
+                });
+            });
+
+        }).fail(function () {
+            alert("save Unsuccess");
         });
-
-        $('tbody tr').off('click');
-        $('tbody tr').click(function () {
-            var selectedrow = $(this);
-            var Fullname = selectedrow.find('td:nth-child(2)').text();
-            var addr = selectedrow.find('td:nth-child(3)').text();
-            var con = selectedrow.find('td:nth-child(4)').text();
-            var mar = selectedrow.find('td:nth-child(5)').text();
-            var gen = selectedrow.find('td:nth-child(6)').text();
-
-            var Fname = Fullname.split(" ")[0];
-            var Lname = Fullname.split(" ")[1];
-            console.log(Fname);
-
-            $('#firstname').val(Fname);
-            $('#lastname').val(Lname);
-            $('#birthday').val();
-            $('#address').val(addr);
-            $('#contactno').val(con);
-            if (mar == 'Married') {
-                document.getElementById("married").checked = true;
-            }
-            if (mar == 'Single') {
-                document.getElementById("single").checked = true;
-            }
-            if (gen == 'Male') {
-                document.getElementById("male").checked = true;
-            }
-            if (gen == 'Female') {
-                document.getElementById("female").checked = true;
-            }
-
-        });
-
-
-    });
-
-
+    }
 </script>
 </body>
 

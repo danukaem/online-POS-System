@@ -2,82 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b88d10-fe1f-4e7f-9479-8d079df8a9b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/8 - Express Demo 5.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/buisness/customer-bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/business/CustomerBO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/business/customer-bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/business/item-bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/custom/customer-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/custom/impl/customer-dao-impl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/custom/impl/item-dao-impl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/custom/item-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/customer-dao-impl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/customer-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/dao-factory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/item-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dao/super-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/db/db-connection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/db/db-pool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dispatcher/customer-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dispatcher/item-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dispatcher/main-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dto/customer-dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dto/customer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dto/item-dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/dto/item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/entity/customer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/entity/item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/business/customer-bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/business/customer-bo.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/business/item-bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/business/item-bo.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/customer-dao.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/impl/customer-dao-impl.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/impl/item-dao-impl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/impl/item-dao-impl.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/item-dao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/custom/item-dao.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/dao-factory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/dao-factory.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dao/super-dao.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/db/db-pool.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/customer-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/customer-dispatcher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/item-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/item-dispatcher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/main-dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dispatcher/main-dispatcher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dto/customer-dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dto/item-dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/dto/item-dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/entity/customer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/entity/item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/entity/item.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/app/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/backEnd.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-backEnd/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/css/jquery.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/customer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/Customer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/customer1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/items1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/placeorder1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/images/placeorder2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/js/control.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/js/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepos system-frontEnd/placeorder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinepos-system-frontEnd/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinepos-system-frontEnd/item.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,67 +45,31 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dispatcher/customer-dispatcher.ts">
+        <entry file="file://$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+            <state relative-caret-position="79">
+              <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
               <folding>
-                <element signature="n#express#0" expanded="true" />
+                <element signature="e#5631#5665#0" />
+                <element signature="e#6967#7016#0" />
+                <element signature="e#7595#7669#0" />
+                <element signature="e#7809#7846#0" />
+                <element signature="e#7940#8011#0" />
+                <element signature="e#8226#8253#0" />
+                <element signature="e#11253#11281#0" />
+                <element signature="e#13121#13177#0" />
+                <element signature="e#13420#13456#0" />
+                <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html">
+        <entry file="file://$PROJECT_DIR$/onlinepos-system-frontEnd/item.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="185" column="31" lean-forward="true" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://1ef58574-449e-4eea-93e5-125474ab1eb9/schema/customers/table/customer">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="n#express#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/business/customer-bo.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/impl/customer-dao-impl.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="n#Promise#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -189,6 +79,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>code</find>
+      <find>Url</find>
+      <find>alert</find>
+      <find>reset</find>
+      <find>console</find>
+      <find>DELETE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,6 +95,7 @@
         <option value="$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dispatcher/customer-dispatcher.ts" />
         <option value="$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/impl/customer-dao-impl.ts" />
         <option value="$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html" />
+        <option value="$PROJECT_DIR$/onlinepos-system-frontEnd/item.html" />
       </list>
     </option>
   </component>
@@ -240,6 +136,12 @@
               <item name="online POS system- danuka" type="462c0819:PsiDirectoryNode" />
               <item name="onlinepos-system-frontEnd" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="online POS system- danuka" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online POS system- danuka" type="462c0819:PsiDirectoryNode" />
+              <item name="onlinepos-system-frontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -250,6 +152,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549266501360" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -295,12 +198,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549213205860</updated>
-      <workItem from="1549213207325" duration="4882000" />
+      <workItem from="1549213207325" duration="21341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4882000" />
+    <option name="totallyTimeSpent" value="21341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -312,10 +215,11 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Learn" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.22012103" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22012103" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" weight="0.11111111" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.14542484" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.45751634" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -323,7 +227,7 @@
       <window_info anchor="bottom" id="TypeScript" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.04901961" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.14215687" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -395,50 +299,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="n#express#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1ef58574-449e-4eea-93e5-125474ab1eb9/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dispatcher/customer-dispatcher.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
-          <folding>
-            <element signature="n#express#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/super-dao.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/business/customer-bo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/impl/customer-dao-impl.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="n#Promise#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -449,13 +316,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/business/item-bo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/impl/item-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/item-dao.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dispatcher/item-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dao/custom/impl/customer-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/business/customer-bo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-backEnd/app/src/dispatcher/customer-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/onlinepos-system-frontEnd/customer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="185" column="31" lean-forward="true" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
+        <state relative-caret-position="79">
+          <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#!!top" expanded="true" />
+            <element signature="e#5631#5665#0" />
+            <element signature="e#6967#7016#0" />
+            <element signature="e#7595#7669#0" />
+            <element signature="e#7809#7846#0" />
+            <element signature="e#7940#8011#0" />
+            <element signature="e#8226#8253#0" />
+            <element signature="e#11253#11281#0" />
+            <element signature="e#13121#13177#0" />
+            <element signature="e#13420#13456#0" />
+            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinepos-system-frontEnd/item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
         </state>
       </provider>
     </entry>
